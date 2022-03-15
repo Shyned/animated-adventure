@@ -1,11 +1,21 @@
-import random
+import random , time
+from unicodedata import name
+
 
 
 #function that starts the game
 def random_trip_planner_start():
       
    
-    print("Welcome to day trip planner !!")
+    print("Welcome to day trip planner !! \n My name is Johnny 5")
+    #just for some time delay between response
+    time.sleep(.5)
+
+    users_name = input("What is your name : ")
+    time.sleep(.5)
+    print(f"{users_name},hahahahaha what a weird name. Sorry")
+
+    
      #ask user if they would like to use trip planner
     user_start_game_choice =  input("Would you like to have plan a trip for you (y or n): ")
   
@@ -25,20 +35,24 @@ def random_trip_planner_start():
                 while True:
 
                     
-                    locations_list = ["Hogwarts ","Willy Wonka's Factory","Gotham City","Asgard","South Park","middle earth"]
+                    locations_list = ["Hogwarts ","Willy Wonka's Factory","Gotham City","Asgard","South Park","middle earth","Silent Hill"]
                     
                     print("Lets start by finding you a location.")
 
                     #users random selection
                     users_randm_place =random_finder(locations_list)
-                    
-                    
-                    print(f"Your location is {users_randm_place}")
 
+                    locations_list.remove(users_randm_place)
+                    print(locations_list)
+                    time.sleep(.5)
+                    print(f"Your location is {users_randm_place}")
+                    
+                    time.sleep(.5)
                     location_happiness = input("Are you happy with your selection(y or n): ")
                     
                     #re-select location and remove previous pick
                     if location_happiness == "n":
+                        print("c'mon that was a good one but ok.")
                         continue
                     else:
                         #will break out of a while loop and move to next loop
@@ -47,22 +61,23 @@ def random_trip_planner_start():
                 
                 while True:
                     
-                    
-                    mode_list = ["broom","jetpack","walking","flying","gaint hamster","teleportation"]
+                    time.sleep(.5)
+                    mode_list = ["broom","jetpack","walking","flying","gaint hamster","teleportation","magic schhol bus",]
 
 
                     #users random selection
                     users_randm_mode =random_finder(mode_list)
                     
-
+                    time.sleep(.5)
                     print(f"Your mode of transportation is {users_randm_mode}.")
                     
-
+                    time.sleep(.5)
                     mode_happiness = input("Are you happy with your selection(y or n): ")
                     
                   
                     
                     if mode_happiness == "n":
+                        print("Don't be difficult.")
                         continue
                         
 
@@ -80,12 +95,14 @@ def random_trip_planner_start():
                     #users random selection
                     users_randm_restaurant =random_finder(restaurant_list)
                     
-                    
+                    time.sleep(.5)
                     print(f"Your restaurant is {users_randm_restaurant}.")
 
+                    time.sleep(.5)
                     restaurant_happiness = input("Are you happy with your selection(y or n): ")
                    
                     if restaurant_happiness == "n":
+                        print(f"{name} your killing me!")
                         continue
                         
 
@@ -96,39 +113,46 @@ def random_trip_planner_start():
                 while True:
                     
                     #start of selections phase
-                    entertainment_list = ["Labyrinth tour","lava rafting trip", "mars excavation","Graboid hunt", "legolas archery class"]
+                    entertainment_list = ["Labyrinth tour","lava rafting trip", "mars excavation","Graboid hunt", "legolas archery class","gladiator school",]
 
 
                     #users random selection
                     users_randm_entertainment =random_finder(entertainment_list)
                     
-                    
+                    time.sleep(.5)
                     print(f"Your entertainment is a {users_randm_entertainment}.")
-
+                   
+                    time.sleep(.5)
                     entertainment_happiness = input("Are you happy with your selection(y or n): ")
                     
                     if entertainment_happiness == "n":
+                        print("why me!?!")
                         continue
 
                     else:
                         break
                 
                 while True:
+                    time.sleep(.5)
                     print(f"You are headed to {users_randm_place} by {users_randm_mode}. While there you will eat at {users_randm_restaurant} and participate in {users_randm_entertainment}.")
                     over_all_happiness = input("Are you happy with your trip (y or n)" )
 
                     if over_all_happiness == "n":
-                        print("Sorry to hear that let's try again.")
+                        time.sleep(.5)
+                        print("OMG back to the start ")
+                        time.sleep(.5)
                         break
 
 
                     else:
-                        print("Enjoy")
+                        time.sleep(.5)
+                        print(f"Alright Goodbye {users_name}")
                         quit()
 
       
             else:
-                print("Ok, see you next time.")
+                time.sleep(.5)
+                print("Thanks for wasting my time.")
                 break
         
 
